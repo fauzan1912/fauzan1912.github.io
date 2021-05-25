@@ -9,12 +9,13 @@
       Nilai inital-scale=1, artinya web akan diberikan skala (zoom) menjadi 1 (normal). -->
 
     <!-- Bootstrap CSS -->
-    <!-- untuk menghubungkan file css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <!-- <untuk></untuk> menghubungkan file css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
     <!-- My CSS -->
     <!-- untuk menghubungkan file css -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
     <title>My Portfolio | Ihwan Ahda Fauzan</title>
   </head>
 
@@ -24,15 +25,17 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Ihwan Ahda Fauzan</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-          <ul class="navbar-nav ms-auto"><!-- ms auto digunakan untik membuat panel navigasi di sebelah kanan dan nama website di kiri -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav ms-auto">
+            <!-- ms auto digunakan untik membuat panel navigasi di sebelah kanan dan nama website di kiri -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a> 
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">Projects</a>
@@ -47,7 +50,8 @@
     <!-- End Navbar -->
 
     <!-- Jumbotron -->
-    <section class="jumbotron text-center"><!-- text-center digunakan untuk membuat konten rata tengah -->
+    <section class="jumbotron text-center">
+      <!-- text-center digunakan untuk membuat konten rata tengah -->
       <img src="img/foto.png" alt="foto" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Ihwan Ahda Fauzan</h1>
       <p class="lead">Student</p>
@@ -65,7 +69,8 @@
     <!-- About -->
     <section id="about">
       <div class="container">
-        <div class="row text-center mb-3"><!-- text-center digunakan untuk membuat konten rata tengah dan mb-3 diguunakan untuk memberi margin bottom -->
+        <div class="row text-center mb-3">
+          <!-- text-center digunakan untuk membuat konten rata tengah dan mb-3 diguunakan untuk memberi margin bottom -->
           <div class="col">
             <h2>About Me</h2>
           </div>
@@ -96,13 +101,15 @@
     <!-- Projects -->
     <section id="projects">
       <div class="container">
-        <div class="row text-center mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+        <div class="row text-center mb-3">
+          <!-- mb-3 diguunakan untuk memberi margin bottom -->
           <div class="col">
             <h2>My Projects</h2>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-4 mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+          <div class="col-md-4 mb-3">
+            <!-- mb-3 diguunakan untuk memberi margin bottom -->
             <div class="card">
               <img src="img/p1.jpg" class="card-img-top" alt="project1" />
               <div class="card-body">
@@ -110,7 +117,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+          <div class="col-md-4 mb-3">
+            <!-- mb-3 diguunakan untuk memberi margin bottom -->
             <div class="card">
               <img src="img/p2.jpg" class="card-img-top" alt="project2" />
               <div class="card-body">
@@ -118,7 +126,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3"> <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom  -->
+          <div class="col-md-4 mb-3">
+            <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom  -->
             <div class="card">
               <img src="img/p3.jpg" class="card-img-top" alt="project3" />
               <div class="card-body">
@@ -126,7 +135,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3"> <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom -->
+          <div class="col-md-4 mb-3">
+            <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom -->
             <div class="card">
               <img src="img/p4.jpg" class="card-img-top" alt="project4" />
               <div class="card-body">
@@ -134,7 +144,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3"> <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom -->
+          <div class="col-md-4 mb-3">
+            <!-- untuk mebuat tammpilan responsive agar bila dibuka pada perangkat mobile menjadi 1 kolom kebawah dan mb-3 diguunakan untuk memberi margin bottom -->
             <div class="card">
               <img src="img/p5.jpg" class="card-img-top" alt="project5" />
               <div class="card-body">
@@ -159,23 +170,28 @@
     <!-- contact beisi form untuk mengirimkan pesan ke pemilik website -->
     <section id="contact">
       <div class="container">
-        <div class="row text-center mb-3"> <!-- mb-3 diguunakan untuk memberi margin bottom -->
+        <div class="row text-center mb-3">
+          <!-- mb-3 diguunakan untuk memberi margin bottom -->
           <div class="col">
             <h2>Contact Me</h2>
           </div>
         </div>
-        <div class="row row justify-content-center"><!-- justify-content-center digunaka agar konten merapat ke tengah -->
+        <div class="row row justify-content-center">
+          <!-- justify-content-center digunaka agar konten merapat ke tengah -->
           <div class="col-md-6">
             <form>
-              <div class="mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+              <div class="mb-3">
+                <!-- mb-3 diguunakan untuk memberi margin bottom -->
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input type="text" class="form-control" id="name" aria-describedby="name" />
               </div>
-              <div class="mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+              <div class="mb-3">
+                <!-- mb-3 diguunakan untuk memberi margin bottom -->
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="email" />
               </div>
-              <div class="mb-3"><!-- mb-3 diguunakan untuk memberi margin bottom -->
+              <div class="mb-3">
+                <!-- mb-3 diguunakan untuk memberi margin bottom -->
                 <label for="pesan" class="form-label">Pesan</label>
                 <textarea class="form-control" id="pesan" rows="3"></textarea>
               </div>
@@ -197,11 +213,13 @@
 
     <!-- Footer -->
     <!-- footer berisi pembuat website serta link yg mengarahkan ke instagram pembuat -->
-    <footer class="bg-primary text-white text-center pb-5"><!-- digunalan untuk merubah warna background menjadi biru, tulisan berwarna putih dan membuat konten ke tengah, serta memberi pading-bottom   -->
+    <footer class="bg-primary text-white text-center pb-5">
+      <!-- digunalan untuk merubah warna background menjadi biru, tulisan berwarna putih dan membuat konten ke tengah, serta memberi pading-bottom   -->
       <p>Create By <a class="text-white fw-bold" href="https://www.instagram.com/ahda_fauzan/">Ihwan Ahda Fauzan</a></p>
     </footer>
     <!-- End Footer -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
