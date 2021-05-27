@@ -1,0 +1,71 @@
+<!-- website ini dibuat dengan fremworl bootstrap 5 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- tag meta viewport akan memberikan intruksi ke browser untuk mengatur dimensi dan sekala web. Nilai width=device-width, artinya lebar web akan mengikuti lebar dari layar perangkat yang digunakan.
+      Nilai inital-scale=1, artinya web akan diberikan skala (zoom) menjadi 1 (normal). -->
+
+    <!-- Bootstrap CSS -->
+    <!-- <untuk></untuk> menghubungkan file css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- My CSS -->
+    <!-- untuk menghubungkan file css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>My Portfolio | Ihwan Ahda Fauzan</title>
+  </head>
+
+  <body id="home">
+    <!-- Navbar -->
+    <!-- navbar beisi navigasi untuk menuju ke bagian-bagian dari website -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ihwan Ahda Fauzan</a>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <!-- mb-3 diguunakan untuk memberi margin bottom -->
+          <div class="col">
+            <h2>My Projects</h2>
+          </div>
+        </div>
+        <div class="row project-container justify-content-center"></div>
+      </div>
+      <!-- koding dibawanh digunakan untuk membuat tambilan gelombang -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#0d6efe"
+          fill-opacity="1"
+          d="M0,192L40,170.7C80,149,160,107,240,96C320,85,400,107,480,112C560,117,640,107,720,138.7C800,171,880,245,960,266.7C1040,288,1120,256,1200,240C1280,224,1360,224,1400,224L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <!-- End Projects -->
+
+    <!-- Footer -->
+    <!-- footer berisi pembuat website serta link yg mengarahkan ke instagram pembuat -->
+    <footer class="bg-primary text-white text-center pb-5">
+      <!-- digunalan untuk merubah warna background menjadi biru, tulisan berwarna putih dan membuat konten ke tengah, serta memberi pading-bottom   -->
+      <p>Create By <a class="text-white fw-bold" href="https://www.instagram.com/ahda_fauzan/">Ihwan Ahda Fauzan</a></p>
+    </footer>
+    <!-- End Footer -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    ;
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

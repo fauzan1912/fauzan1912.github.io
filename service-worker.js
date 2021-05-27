@@ -1,32 +1,77 @@
-var CACHE_NAME = "static_cache";
+var CACHE_NAME = "my-site-cache-v1";
 
-//Files to save in cache
-var STATIC_ASSETS = ["/", "/css/style.css", "/css/bootstrap.min.css", "/js/main.js", "/js/bootstrap.bundle.min.js", "/img/foto.png", "/img/p1.jpg", "/img/p2.jpg", "/img/p3.jpg", "/img/p4.jpg", "/img/p5.jpg"];
+// File untuk disimpan dalam cachee
+var urlsToChache = [
+  "/",
+  "/fallback.json",
+  "/index.html",
+  "/project.html",
+  "/css/style.css",
+  "/css/bootstrap.min.css",
+  "/js/main.js",
+  "/js/bootstrap.bundle.min.js",
+  "/img/foto.png",
+  "/img/p1.jpg",
+  "/img/p2.jpg",
+  "/img/p3.jpg",
+  "/img/p4.jpg",
+  "/img/p5.jpg",
+];
 
-async function preCache() {
-  const cache = await caches.open(CACHE_NAME);
-  return cache.addAll(STATIC_ASSETS);
-}
-
-self.addEventListener("install", (event) => {
-  console.log("[SW] installed");
-  event.waitUntil(preCache());
+// Menginstal service worker
+self.addEventListener("install", function (event) {
+  // Perform some task
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      console.log("in install serviceworker... cache opened!");
+      return cache.addAll(urlsToChache);
+    })
+  );
 });
-self.addEventListener("activate", (event) => {
-  console.log("[SW] activated");
-});
 
-async function fetchAssets(event) {
-  try {
-    const response = await fetch(event.request);
-    return response;
-  } catch (err) {
-    const cache = await caches.open(CACHE_NAME);
-    return cache.match(event.request);
+// Menyimpan cache dan mengembalikan permintaan
+self.addEventListener("fetch", function (event) {
+  var request = event.request;
+  var url = new URL(request.url);
+
+  // Memisahkan request API dan Internal
+  if (url.origin === location.origin) {
+    event.respondWith(
+      caches.match(request).then(function (response) {
+        return response || fetch(request);
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.open("project-cache").then(function (cache) {
+        return fetch(request)
+          .then(function (LiveResponse) {
+            cache.put(request, LiveResponse.clone());
+            return LiveResponse;
+          })
+          .catch(function () {
+            return caches.match(request).then(function (response) {
+              if (response) return response;
+              return caches.match("/fallbax.json");
+            });
+          });
+      })
+    );
   }
-}
-
-self.addEventListener("fetch", (event) => {
-  console.log("[SW] fetched");
-  event.respondWith(fetchAssets(event));
+});
+// Mengupdate service worker
+self.addEventListener("activate", function (event) {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames
+          .filter(function (cacheName) {
+            return cacheName != CACHE_NAME;
+          })
+          .map(function (cacheName) {
+            return caches.delete(cacheName);
+          })
+      );
+    })
+  );
 });
