@@ -5,7 +5,7 @@
   "scope": "/",
   "start_url": "/index.html",
   "name": "myapp",
-  "short_name": "myapp",
+  "short_name": "My Portofolio",
   "description": "percobaan",
   "icons": [
     {
